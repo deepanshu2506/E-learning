@@ -5,7 +5,7 @@ var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'chat-bot',
+    database: 'elearning',
     multipleStatements: true
 });
 

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/styleCode.css">
+	<link rel="stylesheet" href="css/styleRegister.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+  </script>
+</head>
+<body>
+	<img class="wave" src="img/wave.png">
+	<button class="logout">logout</button>
+	<!-- main container -->
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		
+		<div class="login-content">
+			<form action="index.html">
+				<img src="img/avatar.svg">
+				<h2 class="title">Welcome To Login</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input username" >
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input password">
+            	   </div>
+            	</div>
+				<a href="#">Forgot Password?</a>
+				<span>*all fields are mandatory</span>
+				<input type="button" id="loginbtn" class="btn" value="Login">
+				<input type="button" id="regbtn" class="btn" value="new User">
+
+            </form>
+		</div>
+		<div class="code-content" style="display: none;">
+			<form action="index.html">
+				<img src="img/avatar.svg">
+				<h2 class="title">Enter The Course Code</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+                        <i class="fas fa-code"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Course Code</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           	
+            	<input type="submit" class="btn" value="Start Quiz">
+            </form>
+		</div>
+		
+
+
+		<div class="register-content">
+			<form action="quiz.html" method="POST">
+				<img src="img/avatar.svg">
+				<h2 class="title">Welcome To Registration </h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Name</h5>
+           		   		<input type="text" class="input" id="name">
+           		   </div>
+           		</div>
+           		<div class="input-div one">
+           		   <div class="i">
+					<i class="fas fa-user-circle"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>UserName</h5>
+           		   		<input type="text" class="input" id="newUsername">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" id="newPassword">
+            	   </div>
+            	</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+						<i class="fas fa-award"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Qualification</h5>
+           		    	<input type="text" class="input" id="qualification">
+            	   </div>
+            	</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+						<i class="fas fa-book"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Domain</h5>
+           		    	<input type="text" class="input" id='domain'>
+            	   </div>
+            	</div>
+            	<input type="button" class="registerbtn btn" value="Register">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>
