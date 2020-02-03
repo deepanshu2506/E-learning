@@ -18,6 +18,10 @@ app.use(express.static('./static'));
 app.get('/login', (req, res) => {
     res.sendfile(path.join(__dirname + '/static/login.html'))
 });
+
+app.get('/admin' , (req,res)=>{
+    res.sendFile(path.join(__dirname + "/static/adminOp.html"))
+});
 app.listen(8080);
 
 module.exports = app;

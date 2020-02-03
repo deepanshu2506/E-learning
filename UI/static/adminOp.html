@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+
+
+</head>
+<body>
+	<img class="wave" src="img/wave.png">
+	<!-- main container -->
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		
+		<div class="login-content">
+			<form action="index.html">
+				<img src="img/avatar.svg">
+				<h2 class="title">Welcome To Login</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input username" >
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input password">
+            	   </div>
+            	</div>
+				<a href="#">Forgot Password?</a>
+				<span>*all fields are mandatory</span>
+				<input type="button" id="loginbtn" class="btn" value="Login">
+				<input type="button" id="regbtn" class="btn" value="new User">
+
+            </form>
+		</div>
+
+
+        <div class="adminButton-contianer " style="display: none;">
+           
+           <div class="row" style="margin-top: 20rem">
+              
+               <div class="col-md-12">
+                <button type="button" class="btn btn-lg btn-block btn-success"> <span><i class="fas fa-edit"></i></span> Create Quiz</button>
+               </div>
+               <div class="col-md-12">
+                <button type="button" class="btn btn-success btn-lg btn-block "><span> <i class="fas fa-user-shield" ></i></span> View Previous Quiz</button>
+               </div>
+           </div>
+        </div>
+        
+        <div class="quizinfo-content login-content" style="display: none;">
+			<form action="index.html">
+				<!-- <img src="img/avatar.svg"> -->
+				<!-- <h2 class="title">Welcome To Login</h2> -->
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Name your quiz </h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Quiz Domain</h5>
+           		    	<input type="text" class="input">
+            	   </div>
+            	</div>
+            	<button type="submit" class="btn" ><i class="fas fa-edit"></i>Create Quiz</button>
+            </form>
+        </div>
+       
+
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</body>
+</html>
