@@ -2,7 +2,7 @@ const connectionPool = require('../database-connection');
 const _ = require('lodash');
 const getNextQuestion = "select * from question where quizId = ? and isAnswered = 0;"
 const startSession = "select * from quizSessions where quizCode = ?";
-const createSession = "insert into quizSessions(quizCode,startTime,numberOfUsers) values (?,ADDTIME(now(), '00:01:00'),?);";
+const createSession = "insert into quizSessions(quizCode,startTime,numberOfUsers) values (?,ADDTIME(now(), '00:00:30'),?);";
 const addUserToSession = "insert into quizUsers(quizCode,UserId,sessionId) values (?,?,?);";
 const joinSession = "update quizSessions set numberOfUsers = ? where id = ?;";
 const getNumberOfActiveUsers = "select numberOfUsers from quizsessions where id = ?";
@@ -60,7 +60,7 @@ let controllers = {
             }
 
             conn.query(validateCode , req.body.quizCode , (err,re,fields)=>{
-                console.log(re[0].quizId)
+                // console.log(re[0].quizId)
                 if(re.length == 0){
                     res.send({code: 0 , message: "invalid code"})
                 }
@@ -96,7 +96,7 @@ let controllers = {
                                         code: 1,
                                         sessionId: resu.insertId,
                                         numberOfUsers:1,
-                                        timeRemaining: 60,
+                                        timeRemaining: 30,
                                         quizCode:'df',
                                         quizId:re[0].quizId
                                     })

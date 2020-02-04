@@ -21,7 +21,7 @@ $('#adminloginbtn').click(function(){
 		$('span').css({display:'block'})
 	}
 	else{
-		$('span').css({display:'none'});
+		// $('span').css({display:'none'});
 		$.post(httpdomain + 'login/authenticateAdmin' , {username , password} , function(res){
 			console.log(res)
 			if(res.code == 1){

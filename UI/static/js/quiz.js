@@ -17,7 +17,7 @@ userScore = 0;
 
 let runningQuestion = 0;
 let count = 0;
-const questionTime =10; // 10s
+const questionTime =15; // 10s
 const gaugeWidth = 150; // 150px
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;

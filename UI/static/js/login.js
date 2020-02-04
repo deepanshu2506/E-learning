@@ -232,4 +232,8 @@ function displayAnalysis(){
 
 $('#score-popup img').click(function(){
 	$(this).parent().fadeOut(200);
+
+	$('.chart-container').fadeOut(200,function(){
+		$('.code-content').fadeIn(200);
+	});
 })
