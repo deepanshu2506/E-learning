@@ -1,6 +1,6 @@
 
 const inputs = document.querySelectorAll(".input");
-const httpdomain = 'http://localhost:3000/'
+const httpdomain = 'http://192.168.43.111:3000/'
 
 function addcl(){
 	let parent = this.parentNode.parentNode;
