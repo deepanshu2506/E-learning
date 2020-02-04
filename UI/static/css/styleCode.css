@@ -181,6 +181,15 @@ a:hover{
 	background-position: right;
 }
 
+.chart-container{
+	display: none;
+}
+.intermediate-screen{
+	/* display: none; */
+	display: flex;
+	flex-direction: column;
+	margin-top: 20%;
+}
 
 @media screen and (max-width: 1050px){
 	.container{

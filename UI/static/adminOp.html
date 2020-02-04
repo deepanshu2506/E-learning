@@ -10,17 +10,24 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
 
-
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+	<div id="quizCode-popup" class="popup">
+		<img src="img/cancel.svg" width="30px" height="30px" alt="">
+		<p>Abcd32E</p>
+	</div>
 	<img class="wave" src="img/wave.png">
+
+	<button class="adminlogout">logout</button>
+
 	<!-- main container -->
 	<div class="container">
 		<div class="img">
 			<img src="img/bg.svg">
 		</div>
 		
-		<div class="login-content">
+		<div class="login-content admin-login-content">
 			<form action="index.html">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome To Login</h2>
@@ -44,22 +51,22 @@
             	</div>
 				<a href="#">Forgot Password?</a>
 				<span>*all fields are mandatory</span>
-				<input type="button" id="loginbtn" class="btn" value="Login">
-				<input type="button" id="regbtn" class="btn" value="new User">
+				<input type="button" id="adminloginbtn" class="btn" value="Login">
+				<!-- <input type="button" id="regbtn" class="btn" value="new User"> -->
 
             </form>
 		</div>
 
 
-        <div class="adminButton-contianer " style="display: none;">
+        <div class="adminButton-contianer">
            
            <div class="row" style="margin-top: 20rem">
               
                <div class="col-md-12">
-                <button type="button" class="btn btn-lg btn-block btn-success"> <span><i class="fas fa-edit"></i></span> Create Quiz</button>
+                <button type="button" class="btn btn-lg btn-block btn-success create-quiz"> <span><i class="fas fa-edit"></i></span> Create Quiz</button>
                </div>
                <div class="col-md-12">
-                <button type="button" class="btn btn-success btn-lg btn-block "><span> <i class="fas fa-user-shield" ></i></span> View Previous Quiz</button>
+                <button type="button" class="btn btn-success btn-lg btn-block previous-quiz"><span> <i class="fas fa-user-shield" ></i></span> View Previous Quiz</button>
                </div>
            </div>
         </div>
@@ -74,7 +81,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Name your quiz </h5>
-           		   		<input type="text" class="input">
+           		   		<input type="text" class="input name" >
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -83,18 +90,175 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Quiz Domain</h5>
-           		    	<input type="text" class="input">
+           		    	<input type="text" class="input field">
             	   </div>
             	</div>
-            	<button type="submit" class="btn" ><i class="fas fa-edit"></i>Create Quiz</button>
+            	<button type="button" class="createbtn btn" ><i class="fas fa-edit"></i>Create Quiz</button>
             </form>
         </div>
-       
+	   
+		
 
-    </div>
-    <script type="text/javascript" src="js/main.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+		<div class="question-content" style="margin-top:5rem" style="display: none;height: 100vh;">
+            <div class="row">
+                <div class="col-md-1" style="font-size: 2.8rem;display:flex; justify-content: center; align-items: center;padding-right: 1rem;" >
+                    <button style="border:none;outline:none;background-color: #fff;" type="button"> <i class="fas fa-arrow-alt-circle-left" style="color: #2cca93;"></i></button>
+                </div>
+                <div class="col-md-10">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Enter your question: </span>
+                            </div>
+                            <div class="input-group input-group-lg">
+                                
+                                <input type="text" class="form-control question" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-5">
+                       
+                        <div class="col-md-12">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Option 1: </span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <input type="checkbox" class="answerbox" aria-label="Checkbox for following text input">
+                                  </div>
+                                </div>
+                                <input type="text" class="form-control option1" aria-label="Text input with checkbox">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                      
+                        <div class="col-md-12">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Option 2: </span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <input type="checkbox" class="answerbox" aria-label="Checkbox for following text input">
+                                  </div>
+                                </div>
+                                <input type="text" class="form-control option2" aria-label="Text input with checkbox">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                       
+                        <div class="col-md-12">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Option 3: </span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <input type="checkbox" class = "answerbox" aria-label="Checkbox for following text input">
+                                  </div>
+                                </div>
+                                <input type="text" class="form-control option3" aria-label="Text input with checkbox">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                      
+                        <div class="col-md-12">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Option 4: </span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                    <input type="checkbox" class="answerbox" aria-label="Checkbox for following text input">
+                                  </div>
+                                </div>
+                                <input type="text" class="form-control option4" aria-label="Text input with checkbox">
+                              </div>
+                        </div>
+					</div>
+					<span class="errorspan">all fdaf</span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-lg btn- save-question-btn" style="background-color: #2cca93;border: none;">Save</button>
+                        </div>
+                        <div class="col-md-6">
+							<button type="button" class="btn btn-secondary btn-lg btn-block submit-quiz-btn" style="background-color: #ebfbf6; color: black;">Submit Quiz</button>
+        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"style="font-size: 2.8rem;padding-left: 1rem;display:flex; justify-content: center; align-items: center;">
+                    <button style="border:none;outline:none;background-color: #fff;" type="button"> <i class="fas fa-arrow-alt-circle-right" style="color: #2cca93;"></i></button>
+                </div>
+        
+            </div>
+        </div>
+        <div class="course-content mt-5" style="display: none;">
+            <table class="table table-striped table-hover" style="margin-top: 20%;" aria-disabled="true">
+              <thead>
+                <tr>
+                  <th scope="col">Sr.No</th>
+                  <th scope="col">Quiz Name</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody style="background-color: #2cca93;">
+                
+               
+               
+              </tbody>
+            </table>
+          </div>
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Quiz Name</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                 <div class="row">
+                  <div class="col-md-1" style="font-size: 2.8rem;display:flex; justify-content: center; align-items: center;padding-right: 1rem;" >
+                    <button style="border:none;outline:none;background-color: #fff;" type="button"><i class="fas fa-angle-left" style="color: #2cca93;" onclick="get_PreviousData()"></i></button>
+                  </div>
+                  
+                   <div class="col-md-10">
+                    <table class="table table-striped table-hover" aria-disabled="true">
+                      <h4 class="center" id="ques">Q. Question Goes Here?</h4>
+                    <thead>
+                      <th>Username</th>
+                      <th>Answer</th>
+                    </thead>
+                    <tbody id="displayAnswers" style="background-color: #2cca93;">
+                      <tr data-toggle="modal" data-target="#exampleModalCenter">
+                        <td> Something Something</td>
+                        <td>Otto</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                   </div>
+                   <div class="col-md-1" style="font-size: 2.8rem;display:flex; justify-content: center; align-items: center;padding-right: 1rem;" >
+                    <button style="border:none;outline:none;background-color: #fff;" type="button"><i class="fas fa-angle-right" style="color: #2cca93;" onclick="get_NextData()"></i></button>
+                </div>
+                 </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+	<!-- <script type="text/javascript" src="js/login.js"></script> -->
+	<script type="text/javascript" src="js/admin.js"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 

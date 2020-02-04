@@ -11,9 +11,11 @@ const front = require('../controllers/front');
 
 
 
-router.post('/authenticateAdmin' , auth.authenticateAdmin);
-router.post('/authenticateLearner' , auth.authenticateLearner);
-router.post('/register' , auth.register);
+router.post('/joinSession' , front.joinSession);
+router.post('/getActiveUsers',front.getActiveUsers);
+router.post('/getQuiz',front.getQuiz);
+router.post('/setAnswer',front.setAnswer);
+router.post('/getAnalysis',front.getAnalysis)
 
 
 

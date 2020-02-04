@@ -19,6 +19,32 @@ body{
 	z-index: -1;
 }
 
+
+.errorspan{
+	font-size: 12px;
+	color: red;
+	text-align: left;
+	display: none;
+}
+
+.question-content{
+    display: none;
+}
+
+.adminlogout{
+	margin-top: 30px;
+	position: absolute;
+	box-sizing: border-box;
+	padding: 10px;
+	border: 2px solid #056347;
+	background-color: transparent;
+	color: #056347;
+	font-size: 20px;
+	border-radius: 10px;
+	right:20px;
+    display: none;
+}
+
 .container{
     width: 100vw;
     height: 100vh;
@@ -221,4 +247,40 @@ a:hover{
 	.login-content{
 		justify-content: center;
 	}
+}
+
+
+.popup{
+    margin: 10px auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 50%;
+    flex-direction: row-reverse;
+    min-height: 100px;
+    background-color: #eee;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: rgb(82, 80, 80);
+    z-index: 10;
+    font-size: 25px;
+    display: none;
+}
+.popup img{
+    float: right;
+    margin: -8px -8px 0 0;
+}
+.popup p{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    line-height: 100%;
+    padding: 30px;
+    color: darkslategray;
+    font-size: 100px;
 }

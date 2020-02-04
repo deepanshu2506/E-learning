@@ -4,10 +4,13 @@ const getLearnerQuery = 'select * from learners where username=?';
 const addAdmin = "insert into admins(name,username,password,designation,field) values(?,?,?,?,?);";
 const addLearner = "insert into learners(name,username,password,designation,field) values(?,?,?,?,?);";
 const getLearner = "select * from learners where learnerId = ?;";
+const getAdmin = "select * from admins where adminId = ?;";
+
 
 // const config = require('../config/variables');
 let controllers = {
     authenticateAdmin: async (req, res) => {
+        console.log(req.body.username)
         if (req.body.password == undefined) {
             res.send({ code: 0, message: "password not specified" });
         }
@@ -132,6 +135,27 @@ let controllers = {
                 res.send({code : 0 , message : 'could  not connect '})
             }
                 conn.query(getLearner,req.body.learnerId, (err, results, fields) => {
+                if(err){
+                    res.send({code:0,err,message:'error has occured'});
+                }
+                res.send({
+                    code:1,
+                    message:'user found'
+                })
+            });
+            conn.release();        
+        });
+    },
+    getAdmin: async (req,res)=>{
+        if(req.body.adminId == undefined){
+            res.send({code:0})
+        }
+        connectionPool.getConnection((err,conn) => {
+            if(err){
+                res.send({code : 0 , message : 'could  not connect '})
+            }
+                conn.query(getAdmin,req.body.adminId, (err, results, fields) => {
+                    console.log(err);
                 if(err){
                     res.send({code:0,err,message:'error has occured'});
                 }

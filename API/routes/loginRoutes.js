@@ -13,6 +13,8 @@ router.post('/authenticateAdmin' , auth.authenticateAdmin);
 router.post('/authenticateLearner' , auth.authenticateLearner);
 router.post('/register' , auth.register);
 router.post('/getUser' , auth.getUser);
+router.post('/getAdmin' , auth.getAdmin);
+
 
 
 
